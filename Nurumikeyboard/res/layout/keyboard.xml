@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<android.inputmethodservice.KeyboardView
+<!-- <com.fouram.nurumikeyboard.NurumiIME.MKeyboardView -->
+ <android.inputmethodservice.KeyboardView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/keyboard"
+    android:id="@android:id/keyboardView"
+    android:background="@android:color/transparent"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:layout_alignParentBottom="true"
-    android:keyPreviewLayout ="@layout/preview"
+    android:keyPreviewLayout="@layout/preview"
+    android:popupLayout="@layout/mkeyboardlayout"
 />
