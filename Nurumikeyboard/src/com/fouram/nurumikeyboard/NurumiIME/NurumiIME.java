@@ -2,34 +2,33 @@ package com.fouram.nurumikeyboard.NurumiIME;
 
 
 //import android.content.Context;
+import android.content.Context;
 import android.inputmethodservice.InputMethodService;
-//import android.inputmethodservice.Keyboard;
-//import android.inputmethodservice.KeyboardView;
 import android.inputmethodservice.KeyboardView.OnKeyboardActionListener;
-//import android.view.KeyEvent;
+import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+//import android.view.KeyEvent;
 //import android.view.inputmethod.InputConnection;
+import android.widget.EditText;
 
 public class NurumiIME extends InputMethodService implements
 		OnKeyboardActionListener {
 	
-	//private KeyboardView kv;
-	//private Keyboard keyboard;
 	private View mKeyboardView;
-	//private boolean caps = false;
+	private boolean caps = false;
 		
 	@Override
 	public View onCreateInputView() {
 		mKeyboardView = (View)getLayoutInflater().inflate(R.layout.mkeyboardlayout, null);
-		/*
-		kv = (KeyboardView)getLayoutInflater().inflate(R.layout.keyboard, null);
-	    //keyboard = new Keyboard(this, R.layout.mkeyboardlayout);
-	    keyboard = new Keyboard(this, R.xml.qwerty);
-	    kv.setKeyboard(keyboard);
-	    kv.setOnKeyboardActionListener(this);
-	    return kv;
-	    */
 		return mKeyboardView;
+	}
+	
+	@Override
+	public boolean onShowInputRequested (int flags, boolean configChange)
+	{
+		//Log.d("startView", "View started!");
+		return true;
 	}
 	
 	@Override
@@ -99,5 +98,4 @@ public class NurumiIME extends InputMethodService implements
 		// TODO Auto-generated method stub
 
 	}
-
 }

@@ -3,13 +3,13 @@ package com.fouram.nurumikeyboard.NurumiIME;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
-import android.inputmethodservice.KeyboardView;
 import android.util.AttributeSet;
+import android.view.View;
 
 /////////////////////////////////////////////
 /// @class MKeyboardView
 ///com.fouram.nurumikeyboard.NurumiIME \n
-///   ¤¤ MKeyboardView.java
+///      MKeyboardView.java
 /// @section Class information
 ///    |    Item    |    Contents    |
 ///    | :-------------: | -------------   |
@@ -19,8 +19,8 @@ import android.util.AttributeSet;
 /// @section Description
 ///  - View class of custom keyboard.\n
 /////////////////////////////////////////////
-public class MKeyboardView extends KeyboardView {
-	Context context;
+public class MKeyboardView extends View {
+	Context ctx;
 	
 	/////////////////////////////////////////////
 	/// @fn 
@@ -34,8 +34,14 @@ public class MKeyboardView extends KeyboardView {
 	///~~~~~~~~~~~~~
 	/////////////////////////////////////////////
 	public MKeyboardView(Context context, AttributeSet attrs) {
-	    super(context, attrs);
-	    this.context = context;
+		super(context, attrs);
+		this.ctx = context;
+	}
+
+	public MKeyboardView(Context context) {
+		super(context);
+		// TODO Auto-generated constructor stub
+		this.ctx = context;
 	}
 	
 	/////////////////////////////////////////////
@@ -45,9 +51,12 @@ public class MKeyboardView extends KeyboardView {
 	/// - Description Draw transparent background
 	/// @see android.inputmethodservice.KeyboardView#onDraw(android.graphics.Canvas)
 	/////////////////////////////////////////////
+	@Override
 	public void onDraw(Canvas canvas) {
 	    // TODO Auto-generated method stub
 		super.onDraw(canvas);
 	    canvas.drawColor(Color.TRANSPARENT);
 	}
+	
+	
 }

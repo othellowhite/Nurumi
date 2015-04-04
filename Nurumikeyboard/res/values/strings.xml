@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">motionKeyboard</string>
     <string name="nurumi_ime">Nurumi IME</string>
-    <string name="not_linked">no language</string>
+    <string name="subtype_en_US">English (US)</string>
 </resources>
