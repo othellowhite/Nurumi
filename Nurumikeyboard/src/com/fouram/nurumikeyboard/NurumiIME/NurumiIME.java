@@ -1,26 +1,63 @@
 package com.fouram.nurumikeyboard.NurumiIME;
 
 
-//import android.content.Context;
-import android.content.Context;
 import android.inputmethodservice.InputMethodService;
 import android.inputmethodservice.KeyboardView.OnKeyboardActionListener;
-import android.util.Log;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
+//import android.util.Log;
+//import android.view.inputmethod.InputMethodManager;
 //import android.view.KeyEvent;
 //import android.view.inputmethod.InputConnection;
-import android.widget.EditText;
+//import android.widget.EditText;
 
+/////////////////////////////////////////////
+/// @class NurumiIME
+///com.fouram.nurumikeyboard.NurumiIME \n
+///   ¤¤ NurumiIME.java
+/// @section Class information
+///    |    Item    |    Contents    |
+///    | :-------------: | -------------   |
+///    | Company | 4:00 A.M |    
+///    | Author | Park, Hyung Soon |
+///    | Date | 2015. 3. 26 |
+/// @section Description
+///  - Prototype of gesture based keyboard.
+/////////////////////////////////////////////
+
+
+/////////////////////////////////////////////
+/// @class NurumiIME
+///com.fouram.nurumikeyboard.NurumiIME \n
+///   ¤¤ NurumiIME.java
+/// @section Class information
+///    |    Item    |    Contents    |
+///    | :-------------: | -------------   |
+///    | Company | 4:00 A.M. |    
+///    | Author | Park, Hyung Soon |
+///    | Date | 2015. 3. 26. |
+/// @section Description
+///  - Input method service class.\n
+///  - This class makes user to replace keyboard.\n
+/////////////////////////////////////////////
 public class NurumiIME extends InputMethodService implements
 		OnKeyboardActionListener {
 	
 	private View mKeyboardView;
-	private boolean caps = false;
 		
+	/////////////////////////////////////////////
+	/// @fn 
+	/// @brief (Override method) Function information
+	/// @remark
+	/// - Description
+	///	When user put cursor in text box,\n
+	///	custom layout will popup.\n
+	///	The xml file of custom keyboard layout is in res\layout\mkeyboardlayout.xml\n
+	/// @see android.inputmethodservice.InputMethodService#onCreateInputView()
+	/////////////////////////////////////////////
 	@Override
 	public View onCreateInputView() {
-		mKeyboardView = (View)getLayoutInflater().inflate(R.layout.mkeyboardlayout, null);
+		int layoutId = R.layout.mkeyboardlayout;
+		mKeyboardView = (View)getLayoutInflater().inflate(layoutId, null);
 		return mKeyboardView;
 	}
 	
@@ -45,28 +82,8 @@ public class NurumiIME extends InputMethodService implements
 
 	@Override
 	public void onKey(int primaryCode, int[] keyCodes) {       
-	    /*
-		InputConnection ic = getCurrentInputConnection();
-	    switch(primaryCode){
-	    case Keyboard.KEYCODE_DELETE :
-	        ic.deleteSurroundingText(1, 0);
-	        break;
-	    case Keyboard.KEYCODE_SHIFT:
-	        caps = !caps;
-	        keyboard.setShifted(caps);
-	        kv.invalidateAllKeys();
-	        break;
-	    case Keyboard.KEYCODE_DONE:
-	        ic.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ENTER));
-	        break;
-	    default:
-	        char code = (char)primaryCode;
-	        if(Character.isLetter(code) && caps){
-	            code = Character.toUpperCase(code);
-	        }
-	        ic.commitText(String.valueOf(code),1);                 
-	    }
-	    */
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
@@ -96,6 +113,5 @@ public class NurumiIME extends InputMethodService implements
 	@Override
 	public void swipeUp() {
 		// TODO Auto-generated method stub
-
 	}
 }

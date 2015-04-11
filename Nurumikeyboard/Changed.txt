@@ -1,0 +1,2 @@
+Doxygen format comments added.
+Merged Gesture recognition with MKeyboardView class.
